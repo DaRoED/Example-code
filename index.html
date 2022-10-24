@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="../public/stylesheets/styles.css" rel="stylesheet">
+    <link href="../public/highlight/styles/atom-one-dark.min.css" rel="stylesheet">
+    <title>Example</title>
+    <style>
+        div {
+            padding: 10px;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="exampleGet">
+        <pre>
+            <code class="language-javascript">
+                // GET
+                function get(url) {
+                    const connect = org.jsoup.Jsoup.connect(encodeURI(url)).ignoreContentType(true);
+
+                    return connect.get().text();
+                }
+
+                get('https://gamewapi.herokuapp.com/api/show') or get('https://gamewapi.herokuapp.com/api/find/찾을 값')
+
+                // POST
+                function post(url) {
+                    const connect = org.jsoup.Jsoup.connect(encodeURI(url)).ignoreContentType(true);
+
+                    return connect.post().text();
+                }
+
+                post('https://gamewapi.herokuapp.com/api/add?data=추가할 값')
+            </code>
+        </pre>
+    </div>
+
+    <script src="../public/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll()</script>
+</body>
+
+</html>
