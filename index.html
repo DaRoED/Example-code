@@ -16,7 +16,7 @@
 </head>
 
 <body>
-    <div class="exampleGet">
+    <div class="example">
         <pre>
             <code class="language-javascript">
                 // GET
@@ -28,6 +28,8 @@
 
                 get('https://gamewapi.herokuapp.com/api/show') or get('https://gamewapi.herokuapp.com/api/find/찾을 값')
 
+                // return -> 찾는 내용이 없을 시 빈 배열([]), 찾는 내용이 있을 시 [{"data": "내용", "date": "날짜"}]
+
                 // POST
                 function post(url) {
                     const connect = org.jsoup.Jsoup.connect(encodeURI(url)).ignoreContentType(true);
@@ -36,6 +38,8 @@
                 }
 
                 post('https://gamewapi.herokuapp.com/api/add?data=추가할 값')
+
+                // return -> 추가에 성공했을 시 {"textStatus": "succeded"}, 실패 시 {"textStatus": "failed"}, data 파라미터를 찾을 수 없을 시 {"textStatus": "cannot find 'data' property"}
             </code>
         </pre>
     </div>
